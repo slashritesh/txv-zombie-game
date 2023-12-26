@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://nxfle8d21b7h"]
+
+[ext_resource type="Script" path="res://zombie/zombie.gd" id="1_bhwyp"]
+[ext_resource type="Texture2D" uid="uid://0u5cdk87wgfw" path="res://assets/main/left-side-enemy.svg" id="2_4n0py"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhwwr"]
+radius = 35.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_berkj"]
+radius = 78.0256
+
+[node name="zombie" type="CharacterBody2D"]
+position = Vector2(159, 77)
+script = ExtResource("1_bhwyp")
+
+[node name="Left-side-enemy" type="Sprite2D" parent="."]
+position = Vector2(3, -3)
+texture = ExtResource("2_4n0py")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12, 18)
+shape = SubResource("CircleShape2D_dhwwr")
+debug_color = Color(0.529412, 0.396078, 0.792157, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-11, 15)
+shape = SubResource("CircleShape2D_berkj")
+debug_color = Color(0.788235, 0.396078, 0.439216, 0.419608)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
