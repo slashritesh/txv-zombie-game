@@ -621,6 +621,7 @@ layer_0/tile_data = PackedInt32Array(327671, 196608, 1, 393207, 196608, 2, 45874
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="zombie" parent="enemies" instance=ExtResource("3_esuh1")]
+position = Vector2(2566, -161)
 
 [node name="ui" type="CanvasLayer" parent="."]
 script = ExtResource("8_x2sxm")
@@ -642,7 +643,7 @@ text = "Killed : "
 [node name="spawnLocations" type="Node" parent="."]
 
 [node name="0" type="Node2D" parent="spawnLocations" groups=["playerSpawnPoint"]]
-position = Vector2(2131, -422)
+position = Vector2(2716, -97)
 
 [node name="1" type="Node2D" parent="spawnLocations" groups=["playerSpawnPoint"]]
-position = Vector2(2740, -142)
+position = Vector2(2511, -299)

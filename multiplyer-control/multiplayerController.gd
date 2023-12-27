@@ -48,13 +48,15 @@ func SendPlayerInformation(name,id):
 	if multiplayer.is_server():
 		for i in GameManager.players:
 			SendPlayerInformation.rpc(GameManager.players[i].name,i)
+	print("send info",name,id)
 	pass
 
-@rpc("any_peer")
+@rpc("any_peer","call_local")
 func StartGame():
 	var Scene = load("res://level/level.tscn").instantiate()
 	get_tree().root.add_child(Scene)
 	self.hide()
+	print("starting game")
 	pass
 
 #--------------------------------------

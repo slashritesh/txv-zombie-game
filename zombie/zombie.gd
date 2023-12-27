@@ -14,12 +14,9 @@ func _physics_process(_delta: float):
 	move_and_slide()
 
 func make_path():
-	for onePlayer in get_tree().get_nodes_in_group("playerSpawnPoint"):
-		var index = 0
-		if onePlayer.name == str(index):
-			navigation_agent.target_position = onePlayer.global_position
-		index += 1
-
+	var _allplayers = get_tree().get_nodes_in_group("playerSpawnPoint")
+	
+	
 
 
 func _on_timer_timeout():
