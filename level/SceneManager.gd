@@ -2,6 +2,7 @@ extends Node2D
 
 @export var PlayerScene : PackedScene
 
+
 func _ready():
 	var index = 0
 	for i in GameManager.players:
@@ -17,7 +18,5 @@ func _ready():
 	pass 
 
 
-
 func _process(_delta):
-	
 	pass

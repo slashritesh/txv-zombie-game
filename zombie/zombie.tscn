@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://nxfle8d21b7h"]
+[gd_scene load_steps=6 format=3 uid="uid://nxfle8d21b7h"]
 
 [ext_resource type="Script" path="res://zombie/zombie.gd" id="1_bhwyp"]
 [ext_resource type="Texture2D" uid="uid://0u5cdk87wgfw" path="res://assets/main/left-side-enemy.svg" id="2_4n0py"]
@@ -9,6 +9,12 @@ radius = 35.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_berkj"]
 radius = 78.0256
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8j8w1"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/sync = true
+properties/0/watch = false
+
 [node name="zombie" type="CharacterBody2D"]
 position = Vector2(159, 77)
 script = ExtResource("1_bhwyp")
@@ -17,16 +23,10 @@ script = ExtResource("1_bhwyp")
 position = Vector2(3, -3)
 texture = ExtResource("2_4n0py")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-12, 18)
 shape = SubResource("CircleShape2D_dhwwr")
 debug_color = Color(0.529412, 0.396078, 0.792157, 0.419608)
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -35,4 +35,8 @@ position = Vector2(-11, 15)
 shape = SubResource("CircleShape2D_berkj")
 debug_color = Color(0.788235, 0.396078, 0.439216, 0.419608)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-159, -77)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_8j8w1")

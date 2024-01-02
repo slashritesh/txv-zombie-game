@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://pagxlb43pelj"]
+
+[ext_resource type="Script" path="res://StartScreen.gd" id="1_0l6cl"]
+[ext_resource type="Texture2D" uid="uid://dxjp1vs6paa5a" path="res://assets/game-main-screen (1).png" id="1_gq3j5"]
+[ext_resource type="Texture2D" uid="uid://lhsyf1xggl2h" path="res://assets/Group 69.png" id="2_47gqa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27uhy"]
+
+[node name="Strat Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0l6cl")
+
+[node name="Game-main-screen(1)" type="Sprite2D" parent="."]
+position = Vector2(578.889, 320.75)
+scale = Vector2(0.606019, 0.606018)
+texture = ExtResource("1_gq3j5")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 400.0
+offset_right = 761.0
+offset_bottom = 509.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_27uhy")
+icon = ExtResource("2_47gqa")
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

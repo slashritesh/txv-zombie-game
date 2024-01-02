@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://0hcvplr0g35k"]
+
+[ext_resource type="Texture2D" uid="uid://duiwlrgg7mm1s" path="res://assets/lobbyscreen (1).png" id="2_cjfxt"]
+[ext_resource type="Texture2D" uid="uid://droyit7ifc0ep" path="res://assets/joinbtn.png" id="2_sf6wd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bvy38"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts21v"]
+bg_color = Color(0.623529, 0.588235, 0.607843, 0)
+
+[sub_resource type="Theme" id="Theme_gprx3"]
+LineEdit/styles/normal = SubResource("StyleBoxFlat_ts21v")
+
+[node name="Lobby Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lobbyscreen(1)" type="Sprite2D" parent="."]
+position = Vector2(579.111, 333.5)
+scale = Vector2(0.607407, 0.613889)
+texture = ExtResource("2_cjfxt")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 400.0
+offset_right = 761.0
+offset_bottom = 509.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bvy38")
+icon = ExtResource("2_sf6wd")
+expand_icon = true
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 214.0
+offset_right = 766.0
+offset_bottom = 286.0
+theme = SubResource("Theme_gprx3")

@@ -14,43 +14,43 @@ script = ExtResource("1_2y47s")
 
 [node name="join" type="Button" parent="."]
 layout_mode = 0
-offset_left = 118.0
-offset_top = 160.0
-offset_right = 175.0
-offset_bottom = 191.0
+offset_left = 124.0
+offset_top = 238.0
+offset_right = 181.0
+offset_bottom = 269.0
 text = "Join
 "
 
 [node name="host" type="Button" parent="."]
 layout_mode = 0
-offset_left = 187.0
-offset_top = 161.0
-offset_right = 259.0
-offset_bottom = 192.0
+offset_left = 193.0
+offset_top = 239.0
+offset_right = 265.0
+offset_bottom = 270.0
 text = "Host
 "
 
 [node name="start_game" type="Button" parent="."]
 layout_mode = 0
-offset_left = 268.0
-offset_top = 162.0
-offset_right = 381.0
-offset_bottom = 193.0
+offset_left = 274.0
+offset_top = 240.0
+offset_right = 387.0
+offset_bottom = 271.0
 text = "Start Game"
 
 [node name="playername" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 120.0
-offset_top = 116.0
-offset_right = 383.0
-offset_bottom = 147.0
+offset_left = 126.0
+offset_top = 183.0
+offset_right = 389.0
+offset_bottom = 214.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 122.0
-offset_top = 83.0
-offset_right = 221.0
-offset_bottom = 109.0
+offset_left = 128.0
+offset_top = 150.0
+offset_right = 227.0
+offset_bottom = 176.0
 text = "Player Name"
 
 [connection signal="button_down" from="join" to="." method="_on_join_button_down"]

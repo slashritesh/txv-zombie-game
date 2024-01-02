@@ -30,7 +30,7 @@ func PlayerDisconnected(id):
 func connected_to_server():
 	print("Connected to server!")
 	SendPlayerInformation.rpc_id(1,$playername.text,multiplayer.get_unique_id())
-	print("work")
+
 
 #called only from client
 func connection_failed():
@@ -42,13 +42,13 @@ func SendPlayerInformation(name,id):
 		GameManager.players[id] = {
 			"name" : name,
 			"id": id,
-			"Score" : 0
+			"is_Zombie" : false
 		}
 	
 	if multiplayer.is_server():
 		for i in GameManager.players:
 			SendPlayerInformation.rpc(GameManager.players[i].name,i)
-	print("send info",name,id)
+	#print("send info",name,id)
 	pass
 
 @rpc("any_peer","call_local")
